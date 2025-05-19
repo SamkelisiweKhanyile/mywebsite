@@ -1,12 +1,16 @@
 package za.co.shinysneakers.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Customer {
+    @Id
     private String customerId;
     private String firstName;
     private String lastName;
     private String email;
     private String mobile;
-
     protected  Customer(){
     }
     private Customer(Builder builder){
@@ -27,9 +31,9 @@ public class Customer {
         return "Customer { " +
                 "customerId='" + customerId + '\''+
                 ", firstName='" + firstName + '\''+
-                ", lastName='" + lastName = + '\''+
-                ", email='" + email = + '\''+
-                ", mobile='" + mobile = + '\''+
+                ", lastName='" + lastName  + '\''+
+                ", email='" + email  + '\''+
+                ", mobile='" + mobile  + '\''+
                 '}';
     }
     public static class Builder{
@@ -68,7 +72,8 @@ public class Customer {
             return this;
         }
 
-        public Customer build(){return new Customer(this);}
+        public Customer build(){
+            return new Customer(this);}
 
 
     }

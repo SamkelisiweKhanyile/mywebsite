@@ -1,14 +1,19 @@
 package za.co.shinysneakers.domain;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
 public class HomeAddress {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long addressId;
     private String streetNumber;
     private String streetName;
     private String suburb;
     private String city;
-    private String provice;
-    private String country;
-    private int postalCode;
+    private String province;
 
 
     protected HomeAddress() {
